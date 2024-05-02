@@ -1,9 +1,10 @@
 require ('dotenv').config()
 const express = require('express')
 const mongoose= require('mongoose')
-const videoRoutes = require("./routes/videoRoutes")
-const userRoutes = require("./routes/userRoute")
-const webinaireRoutes = require('./routes/webinaireRoutes')
+const videoRoutes = require("../routes/videoRoutes")
+const userRoutes = require("../routes/userRoute")
+const webinaireRoutes = require('../routes/webinaireRoutes')
+const messageRoutes = require("../routes/messageRoutes");
 const cors = require('cors')
 
 const PORT = process.env.PORT
@@ -34,6 +35,9 @@ app.use('/api/users', userRoutes)
 
 //middleware of webinaire
 app.use('/api/webinaires', webinaireRoutes)
+
+//middleware of message
+app.use('/messages', messageRoutes)
 
 //connect to db
 mongoose
