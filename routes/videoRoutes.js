@@ -7,18 +7,23 @@ const {
   deleteVideo,
   updateVideo,
   getAllFolder,
+  getFolder
 } = require("../controler/videoControler");
 
 const router = express.Router();
 
 // get all video
-router.get("/", getVideos);
+router.get("/videoFolder/:id", getVideos);
 
 //get all folder
-router.get("/folders", getAllFolder);
+router.get("/folder/allFolders", getAllFolder);
+
+//get folder
+router.get("/folder/:id", getFolder);
+
 
 // get single video
-router.get("/:id", getOneVideo);
+router.get("/video/:id", getOneVideo);
 
 //Post a new video
 router.post("/", createNewVideo);

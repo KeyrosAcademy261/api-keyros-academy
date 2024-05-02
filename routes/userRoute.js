@@ -9,7 +9,7 @@ const {
   signUpAdmin,
   getUser,
   updateUser,
-  deleteUser
+  deleteUser,
 } = require("../controler/Controller");
 
 const router = express.Router();
@@ -33,9 +33,9 @@ router.get("/allUser", getAllUsers);
 router.get("/:id", getUser);
 
 //update user route
-router.patch('/:id', updateUser)
+router.patch("/:id", updateUser);
 
 //delete user route
-router.delete('/:id', deleteUser)
+router.delete("/:id", deleteUser);
 
 module.exports = router;
